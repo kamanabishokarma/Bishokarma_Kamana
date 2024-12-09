@@ -1,0 +1,234 @@
+  /* Resume Page Specific Styles */
+  .resume-section {
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem 2rem;
+}
+
+.resume-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 2s ease-out;
+}
+
+.resume-title {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    text-decoration: underline;
+}
+
+.resume-header {
+    margin-bottom: 3rem;
+}
+
+.summary-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #D5C7BD;
+}
+
+.summary-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+
+.skills-section, .education-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #D5C7BD;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-category {
+    background: rgba(213, 199, 189, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform-origin: center;
+    transition: all 0.9s ease; /* Add this line */
+}
+
+.skill-category:hover {
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05) translateY(-5px);
+    /* Add z-index to ensure it appears above other elements when scaled */
+    z-index: 1;
+}
+
+.skill-category h3 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #D5C7BD;
+}
+
+.skill-category i {
+    font-size: 1.5rem;
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: #D5C7BD;
+    border-radius: 4px;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+/* Animation for skill bars */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-category:nth-child(1) { animation-delay: 0.2s; }
+.skill-category:nth-child(2) { animation-delay: 0.4s; }
+.skill-category:nth-child(3) { animation-delay: 0.6s; }
+.skill-category:nth-child(4) { animation-delay: 0.8s; }
+
+.skill-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-list li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.education-item {
+    margin-bottom: 2rem;
+}
+
+.education-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+}
+
+.education-details {
+    font-size: 1rem;
+    color: #D5C7BD;
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    background-color: #D5C7BD;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: #FFFFFF;
+    transform: translateY(-2px);
+}
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Style the scrollbar buttons */
+::-webkit-scrollbar-button {
+    height: 12px;
+    background-color: #000000;
+    border: 1px solid #D5C7BD;
+    border-radius: 6px;
+}
+
+/* Style the up/down buttons on hover */
+::-webkit-scrollbar-button:hover {
+    background-color: #D5C7BD;
+}
+
+/* Style the up button */
+::-webkit-scrollbar-button:vertical:start:decrement {
+    border-width: 0 6px 6px 6px;
+    border-color: transparent transparent #FFFFFF transparent;
+}
+
+/* Style the down button */
+::-webkit-scrollbar-button:vertical:end:increment {
+    border-width: 6px 6px 0 6px;
+    border-color: #FFFFFF transparent transparent transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 6px;
+    border: 3px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D5C7BD;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #FFFFFF #000000;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume-section {
+        padding: 5rem 1rem 1rem 1rem;
+    }
+
+    .resume-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .summary-title, .section-title {
+        font-size: 1.8rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
